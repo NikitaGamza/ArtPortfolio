@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Картина {% endblock %}
+
+{% block content %}
+    {% for picture in pic %}
+        <img src="{{ picture.image.url }}">
+        <h1>{{picture.name}}</h1>
+        <p>Ширина: {{picture.width}} см</p>
+        <p>Высота: {{picture.height}} см</p>
+        <p>Год: {{picture.year}}</p>
+        <p>Описание: {{picture.description}}</p>
+        <p>{{picture.category}}</p>
+        <p>{% for mat in picture.material.all %}
+                {{mat}}
+            {% endfor %}
+        </p>
+    {% endfor %}
+{% endblock %}

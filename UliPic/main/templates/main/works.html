@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Работы {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="content">
+    {% for picture in pic reversed %}
+        <div class="block">
+            <div class="block-info">
+                <a href="{{ picture.id }}"><img src="{{ picture.image.url }}"></a>
+                <p>{{picture.name}}</p>
+                <!-- <p>Ширина: {{picture.width}} см</p>
+                <p>Высота: {{picture.height}} см</p>
+                <p>Год: {{picture.year}}</p>
+                <p>Описание: {{picture.description}}</p>
+                <p>{{picture.category}}</p>
+                <p>{% for mat in picture.material.all %}
+                        {{mat}}
+                    {% endfor %}
+                </p> -->
+                <!-- <p>
+                    <a href="{{ picture.id }}">Подробнее...</a>
+                </p> -->
+            </div>
+        </div>
+    
+    {% endfor %}
+    </div>
+    </div>
+
+{% endblock %}
